@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTm-Of-1WW">
-                                <rect key="frame" x="166" y="253" width="42" height="21"/>
+                                <rect key="frame" x="281" y="107" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -37,9 +37,45 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRO-4g-jfO">
+                                <rect key="frame" x="41" y="190" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fv1-2N-Qh6">
+                                <rect key="frame" x="229" y="246" width="130" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ibs-om-URu">
+                                <rect key="frame" x="41" y="318" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOk-1g-aKi">
+                                <rect key="frame" x="258" y="364" width="51" height="31"/>
+                            </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dude" translatesAutoresizingMaskIntoConstraints="NO" id="0rm-gu-5fo">
+                                <rect key="frame" x="0.0" y="378" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FIC-Ws-awJ"/>
+                                    <constraint firstAttribute="width" constant="240" id="TXf-Jq-NjX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0rm-gu-5fo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2i9-Lm-9Rd"/>
+                            <constraint firstItem="iOk-1g-aKi" firstAttribute="leading" secondItem="0rm-gu-5fo" secondAttribute="trailing" constant="18" id="5zQ-qX-MOX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0rm-gu-5fo" secondAttribute="bottom" constant="161" id="C0E-vf-dAa"/>
+                            <constraint firstItem="0rm-gu-5fo" firstAttribute="top" secondItem="Ibs-om-URu" secondAttribute="bottom" constant="32" id="O8n-pC-deM"/>
                             <constraint firstItem="wNk-lh-8oz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yy8-JB-FFp"/>
                             <constraint firstItem="wNk-lh-8oz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="sMF-0e-FFa"/>
                         </constraints>
@@ -48,11 +84,20 @@
                     <connections>
                         <outlet property="blueView" destination="CI3-Yd-kNb" id="zXY-iU-P6d"/>
                         <outlet property="button" destination="wNk-lh-8oz" id="EPx-UZ-QHi"/>
+                        <outlet property="imageView" destination="0rm-gu-5fo" id="15D-Ts-H9U"/>
                         <outlet property="label" destination="WTm-Of-1WW" id="Ing-dH-lbb"/>
+                        <outlet property="segmentedControl" destination="Ibs-om-URu" id="k6F-GZ-KUk"/>
+                        <outlet property="swi" destination="iOk-1g-aKi" id="B6M-kg-d1U"/>
+                        <outlet property="textField" destination="pRO-4g-jfO" id="gOQ-aS-ADR"/>
+                        <outlet property="textView" destination="fv1-2N-Qh6" id="7og-uR-4yP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dude" width="800" height="1122"/>
+    </resources>
 </document>
