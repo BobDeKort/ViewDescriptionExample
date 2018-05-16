@@ -25,8 +25,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set preferences
+        ViewDescriptionManager.instance.setPreferences(preferences: [.backGroundColor: UIColor.red, .fontColor: UIColor.yellow])
         
-        label.addDescription(description: "hello there", gesture: .doubleTap, isEnabled: true, preferences: [.backGroundColor: UIColor.red, .fontColor: UIColor.yellow])
+        // Add description to view
+        label.addDescription(description: "hello there", gesture: .doubleTap, isEnabled: true)
         blueView.addDescription(description: Descriptions.Views.blueView)
         button.addDescription(description: Descriptions.Buttons.informationButton)
         textField.addDescription(description: "This is a text field")

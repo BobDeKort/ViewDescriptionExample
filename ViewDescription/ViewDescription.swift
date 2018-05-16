@@ -209,10 +209,10 @@ class DescriptionViewController: UIViewController, UIPopoverPresentationControll
             // Add and constrain description label
             popOverVC?.view.addSubview(descriptionLabel!)
             popOverVC?.view.addConstraints([
-                descriptionLabel!.topAnchor.constraint(equalTo: popOverVC!.view.topAnchor, constant: 0),
+                descriptionLabel!.topAnchor.constraint(equalTo: popOverVC!.view.topAnchor, constant: 10),
                 descriptionLabel!.leftAnchor.constraint(equalTo: popOverVC!.view.leftAnchor, constant: 10),
                 descriptionLabel!.rightAnchor.constraint(equalTo: popOverVC!.view.rightAnchor, constant: -10),
-                descriptionLabel!.bottomAnchor.constraint(equalTo: popOverVC!.view.bottomAnchor, constant: 0)])
+                descriptionLabel!.bottomAnchor.constraint(equalTo: popOverVC!.view.bottomAnchor, constant: -10)])
             
             // Calculate size based on description text size
             popOverVC?.preferredContentSize =
@@ -259,13 +259,8 @@ extension String {
 extension UIView {
     func addDescription(description: String,
                         gesture: ViewDescriptionGestures = .longPress,
-                        isEnabled: Bool = true,
-                        preferences: [ViewDescriptionPreferences: Any]? = nil) {
+                        isEnabled: Bool = true) {
         ViewDescriptionManager.instance.addActiveDescription(view: self, description: description, gesture: gesture, isEnabled: isEnabled)
-        
-        if let preferences = preferences {
-            ViewDescriptionManager.instance.setPreferences(preferences: preferences)
-        }
         
         self.isUserInteractionEnabled = true
         
